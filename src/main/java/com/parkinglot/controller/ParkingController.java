@@ -90,7 +90,8 @@ public class ParkingController {
 	}
 	
 	@GetMapping("/cars/color/{color}")
-	ResponseEntity<List<String>> findCarsByColor(@PathVariable String color){
+	
+	public ResponseEntity<List<String>> findCarsByColor(@PathVariable String color){
 		
 		List<String> regestrationNumbers = carService.findByColor(color).stream().map(Car::
 			getRegestrationNumber).toList();
